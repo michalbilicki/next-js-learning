@@ -1,18 +1,20 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import Date from '../components/date'
-import Layout, { siteTitle } from '../components/layout'
-import utilStyles from '../styles/utils.module.css'
-import { getSortedPostsData } from '../lib/posts'
+import React from 'react';
+import Link from 'next/link';
+import PropTypes from 'prop-types';
+import Head from 'next/head';
+import Layout, { siteTitle } from '../components/layout';
+import Date from '../components/date';
+import utilStyles from '../styles/utils.module.css';
+import { getSortedPostsData } from '../lib/posts';
 
 export const getStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const allPostsData = getSortedPostsData();
   return {
     props: {
       allPostsData
     }
-  }
-}
+  };
+};
 
 const Home = ({ allPostsData }) => {
   return (
@@ -34,19 +36,25 @@ const Home = ({ allPostsData }) => {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
+              <Link href={`/posts/${id}`}>{title}</Link>
               <br />
               <small className={utilStyles.lightText}>
                 <Date dateString={date} />
               </small>
-          </li>
+            </li>
           ))}
         </ul>
       </section>
     </Layout>
-  )
-}
+  );
+};
+
+Home.propTypes = {
+  allPostsData: PropTypes.arrayOf(PropTypes.any)
+};
+
+Home.defaultProps = {
+  allPostsData: []
+};
 
 export default Home;

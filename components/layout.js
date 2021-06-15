@@ -1,21 +1,20 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
-import Link from 'next/link'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from './layout.module.css';
+import utilStyles from '../styles/utils.module.css';
+import Link from 'next/link';
 
-const name = 'Your Name'
-export const siteTitle = 'Next.js Sample Website'
+const name = 'Your Name';
+export const siteTitle = 'Next.js Sample Website';
 
 const Layout = ({ children, home }) => {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
+        <meta name="description" content="Learn how to build a personal website using Next.js" />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
@@ -41,20 +40,18 @@ const Layout = ({ children, home }) => {
         ) : (
           <>
             <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/images/profile.jpg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
+              <Image
+                priority
+                src="/images/profile.jpg"
+                className={utilStyles.borderCircle}
+                height={108}
+                width={108}
+                alt={name}
+              />
             </Link>
             <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{name}</a>
+              <Link href="/" className={utilStyles.colorInherit}>
+                {name}
               </Link>
             </h2>
           </>
@@ -63,13 +60,21 @@ const Layout = ({ children, home }) => {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
+          <Link href="/">← Back to home</Link>
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+Layout.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  home: PropTypes.bool
+};
+
+Layout.defaultProps = {
+  children: undefined,
+  home: false
+};
+
+export default Layout;
