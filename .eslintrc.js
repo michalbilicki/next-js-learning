@@ -1,5 +1,6 @@
 module.exports = {
   root: true, // Make sure eslint picks up the config at the root of the directory
+  plugins: ['simple-import-sort'],
   parserOptions: {
     ecmaVersion: 2020, // Use the latest ecmascript standard
     sourceType: 'module', // Allows using import/export statements
@@ -34,6 +35,5 @@ module.exports = {
         aspects: ['invalidHref', 'preferButton']
       }
     ]
-  },
-  plugins: ['simple-import-sort']
+  }
 };
