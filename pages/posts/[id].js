@@ -4,7 +4,7 @@ import Date from '../../components/date';
 import Head from 'next/head';
 import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts';
-import utilStyles from '../../styles/utils.module.css';
+import utilStyles from '../../styles/utils.module.scss';
 
 export const getStaticProps = async ({ params }) => {
   const postData = await getPostData(params.id);
@@ -41,7 +41,7 @@ const Post = ({ postData }) => {
 };
 
 Post.propTypes = {
-  postData: PropTypes.arrayOf(PropTypes.any)
+  postData: PropTypes.objectOf(PropTypes.any)
 };
 
 Post.defaultProps = {

@@ -1,7 +1,12 @@
-.container {
+@mixin reset-list {
   max-width: 36rem;
   padding: 0 1rem;
   margin: 3rem auto 6rem;
+  background-color: red;
+}
+
+.container {
+  @include reset-list;
 }
 
 .header {
