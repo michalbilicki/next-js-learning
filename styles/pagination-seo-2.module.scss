@@ -1,0 +1,27 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.listItem {
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 8px;
+  border: 1px solid grey;
+}
+
+.buttonsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.button {
+  margin: 4px;
+  width: 50px;
+  height: 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}

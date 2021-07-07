@@ -7,16 +7,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix .",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,scss,md,json}' --config ./.prettierrc"
   },
   "dependencies": {
-    "bootstrap": "^5.0.0-beta3",
+    "@prisma/client": "^2.26.0",
     "date-fns": "^2.22.1",
     "gray-matter": "^4.0.3",
     "next": "^10.0.0",
+    "next-auth": "^3.27.1",
     "prop-types": "^15.7.2",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-paginate": "^7.1.3",
     "remark": "^13.0.0",
     "remark-html": "^13.0.1",
     "sass": "^1.35.0"
@@ -31,7 +33,8 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.1",
+    "prisma": "^2.26.0"
   },
   "husky": {
     "hooks": {

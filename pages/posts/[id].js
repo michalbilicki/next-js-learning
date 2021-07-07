@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Date from '../../components/date';
+import Date from '/components/date';
 import Head from 'next/head';
-import Layout from '../../components/layout';
-import { getAllPostIds, getPostData } from '../../lib/posts';
-import utilStyles from '../../styles/utils.module.scss';
+import Layout from '/components/layout';
+import { getAllPostIds, getPostData } from '/lib/posts';
+import utilStyles from '/styles/utils.module.scss';
 
 export const getStaticProps = async ({ params }) => {
   const postData = await getPostData(params.id);

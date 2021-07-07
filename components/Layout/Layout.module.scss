@@ -1,0 +1,45 @@
+@mixin reset-list {
+  height: 100%;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.container {
+  @include reset-list;
+}
+
+.header {
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  div {
+    margin-left: 8px;
+  }
+}
+
+.backToHome {
+  margin: 3rem 0 0;
+}
+
+.button {
+  margin: 4px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.largeButton {
+  margin: 4px;
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}

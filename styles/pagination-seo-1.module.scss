@@ -1,0 +1,62 @@
+@mixin remove-marker {
+  padding: 0 8px;
+  cursor: pointer;
+
+  &::marker {
+    display: none !important;
+    font-size: 0px;
+  }
+
+  a {
+    text-align: center;
+    text-decoration: none;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+}
+
+.breakMe {
+  @include remove-marker;
+}
+
+.previous {
+  @include remove-marker;
+}
+
+.disabled {
+  @include remove-marker;
+  cursor: not-allowed;
+
+  a {
+    color: grey;
+  }
+}
+
+.active {
+  @include remove-marker;
+  background-color: grey;
+  border-radius: 5px;
+
+  a {
+    color: white;
+  }
+}
+
+.next {
+  @include remove-marker;
+}
+
+.listItem {
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 8px;
+  border: 1px solid grey;
+}
